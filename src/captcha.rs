@@ -234,17 +234,9 @@ impl ChineseClick0 {
 
 #[cfg(feature = "slide_0")]
 pub struct Slide0;
-impl CaptchaBreaker for Slide0 {
-    fn build(captcha_environment: &CaptchaEnvironment) -> Result<Self, Box<dyn Error>>
-    where
-        Self: Sized
-    {
-        Ok(Slide0)
-    }
-}
 
 impl Slide0 {
-    pub fn run(target_image: DynamicImage, background_image: DynamicImage) -> Result<SlideBBox, Box<dyn Error>> {
+    pub fn run(target_image: &DynamicImage, background_image: &DynamicImage) -> Result<SlideBBox, Box<dyn Error>> {
         // if background_image.width() < target_image.width() {
         //     return Err("背景图片的宽度必须大于等于目标图片的高度")
         // }
