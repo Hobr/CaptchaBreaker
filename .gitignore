@@ -16,3 +16,4 @@ target/
 /images
 
 Cargo.lock
+.envrc
